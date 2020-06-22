@@ -1,0 +1,22 @@
+{
+  "name": "cucumberjsbasic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cuke": " ./node_modules/.bin/cucumber-js --format=json:cucumber_report.json &&  node index.js",
+    "protractorcuke": "protractor protractor.conf.js"
+  },
+  "author": "alexo",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "cucumber": "^5.1.0"
+  },
+  "devDependencies": {
+    "cucumber-html-reporter": "^5.0.0",
+    "protractor-cucumber-framework": "^6.1.2",
+    "protractor-multiple-cucumber-html-reporter-plugin": "^1.8.1"
+  }
+}

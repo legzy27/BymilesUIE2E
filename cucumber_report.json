@@ -1,0 +1,110 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Navigate Auden Credit/ShortTermLoan",
+    "line": 1,
+    "id": "navigate-auden-credit/shorttermloan",
+    "tags": [],
+    "uri": "features/login.feature",
+    "elements": [
+      {
+        "id": "navigate-auden-credit/shorttermloan;monthly-loan-repayment-option",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Monthly Loan Repayment Option",
+        "tags": [
+          {
+            "name": "@prod",
+            "line": 3
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "features/stepDefinitions/hooks.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on the auden short loan page",
+            "match": {
+              "location": "features/stepDefinitions/stepDefinition.js:5"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 2000000,
+              "error_message": "ReferenceError: browser is not defined\n    at World.<anonymous> (/Users/legzy27/AudenBDDFramework/features/stepDefinitions/stepDefinition.js:6:3)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I select monthly loan instalment",
+            "match": {
+              "location": "features/stepDefinitions/stepDefinition.js:15"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I set first repayment day to weekend option will change to friday",
+            "match": {
+              "location": "features/stepDefinitions/stepDefinition.js:26"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I select min and max amounts of loan slider.",
+            "match": {
+              "location": "features/stepDefinitions/stepDefinition.js:35"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should see slider amount is loan",
+            "match": {
+              "location": "features/stepDefinitions/stepDefinition.js:46"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "features/stepDefinitions/hooks.js:23"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
