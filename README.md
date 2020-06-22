@@ -20,11 +20,14 @@ Protractor is an open source end to end testing testing framework.It allows you 
 - cd in to folder
 -  npm install
 -  protractor protractor.conf.js and press enter
+-  check report folder for HTML Reports
   
 ## Dependency needed
 - npm protractor-cucumber-framework
 - npm install chai
-- npm install cucumebr
+- npm install cucumber
+- npm install mocha
+- npm install chai-as-promised
 
 
 ## Automated tests Improvement

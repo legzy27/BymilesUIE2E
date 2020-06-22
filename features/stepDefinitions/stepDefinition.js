@@ -1,6 +1,8 @@
 let {Given,When,Then,setDefaultTimeout} = require('cucumber');
 setDefaultTimeout(50 * 1000);
-const { expect } = require('chai')
+var chai = require('chai');
+var expect = chai.expect;
+
 
 Given('I am on the auden short loan page', async function () {
   await browser.manage().timeouts().implicitlyWait(50 * 8000);
@@ -22,7 +24,7 @@ When('I select monthly loan instalment', async function () {
 
 
 
-
+//first repayment day to weekend option will change to friday
 Then('I set first repayment day to weekend option will change to friday', async function () {
   browser.manage().timeouts().implicitlyWait(5000);
   element(by.cssContainingText('.date-selector__date', "5")).click();
@@ -31,13 +33,15 @@ Then('I set first repayment day to weekend option will change to friday', async 
 });
 
 
-
+ // min & max amounts of loan slider
 Then('I select min and max amounts of loan slider.', async function () {
   await browser.manage().timeouts().implicitlyWait(5000);
    var slider = element(by.css('div.range-input.loan-amount__range-slider')); 
    await browser.actions().dragAndDrop(slider, {x: 0, y: 30}).perform();
-   //browser.actions().mouseMove(slider).mouseDown().mouseMove({x:30,y:0 }).mouseUp().perform()
    await browser.sleep(2000);
+   //assertion
+   expect('Loan Amount').to.exist;
+     
    return console.log("@Then -- I select min and max amounts of loan slider");
 });
 
@@ -45,9 +49,9 @@ Then('I select min and max amounts of loan slider.', async function () {
 // This chai Assertion check loan amount exist
 Then('I should see slider amount is loan', async function () {
   await browser.manage().timeouts().implicitlyWait(5000);
-  expect('Loan Amount').to.exist;
+  //Assertion
+  expect('Loan').to.exist;
   await browser.manage().timeouts().implicitlyWait(5000);
-  await browser.sleep(5000);
   return console.log("@Then -- I should see slider amount is loan");
 });
 
