@@ -12,8 +12,9 @@ chai.use(chaiAsPromised);
       browser.getCurrentUrl().then(url => {
         console.log('The current URL is' + url)
       })
-      //sleep waits for the steps to be complete(reduce execution speed)
-      //so you can see the execution browser.wait can be used as well
+      /*sleep waits for the steps to be complete(reduce execution speed)
+      so you can see the execution browser.wait can be used as well. it might take more time
+      for some elements to become visible */
       await browser.driver.sleep(5000);
       return console.log("@Given -- I am on the landing page");
      });
@@ -46,7 +47,8 @@ chai.use(chaiAsPromised);
           await browser.driver.sleep(2000);
               element(by.css("div:nth-of-type(9)")).click();
             await browser.driver.sleep(2000);
-              element.all(
+
+              element(
                 by.css(
                   "section:nth-of-type(5)>div:nth-of-type(1)>div:nth-of-type(1)>form>button>span"
                 )
