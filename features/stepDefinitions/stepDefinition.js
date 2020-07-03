@@ -47,11 +47,12 @@ chai.use(chaiAsPromised);
           await browser.driver.sleep(2000);
               element(by.css("div:nth-of-type(9)")).click();
             await browser.driver.sleep(2000);
-
+             
+            var width = 800;
+            var height = 600;
+            browser.driver.manage().window().setSize(width, height);
               element(
-                by.css(
-                  "section:nth-of-type(5)>div:nth-of-type(1)>div:nth-of-type(1)>form>button>span"
-                )
+                by.css("button button--primary button--quick-quote")
               ).click();
                return console.log("@Then -- I fill the claims form and get a the quote");
              });
