@@ -1,9 +1,7 @@
-# Auden Test Automation Framework
+# ByMiles Test Automation Framework
 
 ## Overview
-This test only allow users first repayment day option to be a weekday,
-if you select repayment day to be saturday or sunday it will automatically push you back to friday.
-select min & max amounts slider and selected slider amount is loan
+Simple E2E tests of get a quick quote 
 
 
 
@@ -27,10 +25,14 @@ Protractor is an open source end to end testing testing framework.It allows you 
 - npm install chai
 - npm install cucumber
 - npm install mocha
-- npm install chai-as-promised
+
+
 
 
 ## Automated tests Improvement
--  Move min and max amounts of Loan on slider
+-  Use more await command than sleep command
+-  click get quote button is been intercepted need to use unique element
+-  Write clean code less duplications
+-  Create Page Object Model
 
 
