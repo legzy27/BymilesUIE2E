@@ -1,7 +1,7 @@
 var {Before,BeforeAll,After,AfterAll} = require('cucumber');
 
 
-BeforeAll(function(){
+BeforeAll("@test",function(){
 
     console.log("Inside BeforeAll Hook");
 
@@ -14,13 +14,13 @@ AfterAll(function(){
 });
 
 
-Before("not @dev",function(){
+Before(function(){
 
     console.log("Inside Before Hook");
  
 });
 
-After("not @dev",function(){
+After(function(){
 
     console.log("Inside After Hook");
 

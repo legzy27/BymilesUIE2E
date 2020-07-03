@@ -1,60 +1,58 @@
 let {Given,When,Then,setDefaultTimeout} = require('cucumber');
 setDefaultTimeout(50 * 1000);
 var chai = require('chai');
-var expect = chai.expect;
+var chaiAsPromised = require("chai-as-promised");
+chai.use(chaiAsPromised);
 
 
-Given('I am on the auden short loan page', async function () {
-  await browser.manage().timeouts().implicitlyWait(50 * 8000);
-  browser.ignoreSynchronization = true;
-  browser.get('https://www.auden.co.uk/Credit/ShortTermLoan');
-  await browser.sleep(3000);
-  return console.log("@Given -- I am on the auden short loan page");
-
-})
-
-
-When('I select monthly loan instalment', async function () {
-  browser.manage().timeouts().implicitlyWait(5000);
-  var slider = element(by.css('div.range-input.loan-amount__range-slider'));  
-  browser.actions().dragAndDrop(slider, {x:30, y:0}).perform();
-  await browser.sleep(1000);
-  return console.log("@When -- I select monthly loan instalment");
-});
+     Given("I am on the landing page", async function () {
+      await browser.manage().timeouts().implicitlyWait(50 * 8000);
+      browser.ignoreSynchronization = true;
+      browser.get("https://www.bymiles.co.uk/");
+      browser.getCurrentUrl().then(url => {
+        console.log('The current URL is' + url)
+      })
+      //sleep waits for the steps to be complete(reduce execution speed)
+      //so you can see the execution browser.wait can be used as well
+      await browser.driver.sleep(5000);
+      return console.log("@Given -- I am on the landing page");
+     });
 
 
-
-//first repayment day to weekend option will change to friday
-Then('I set first repayment day to weekend option will change to friday', async function () {
-  browser.manage().timeouts().implicitlyWait(5000);
-  element(by.cssContainingText('.date-selector__date', "5")).click();
-  browser.manage().timeouts().implicitlyWait(5000);
-  return console.log("@Then -- I set first repayment day option for the weekend change to friday");
-});
-
-
- // min & max amounts of loan slider
-Then('I select min and max amounts of loan slider.', async function () {
-  await browser.manage().timeouts().implicitlyWait(5000);
-   var slider = element(by.css('div.range-input.loan-amount__range-slider')); 
-   await browser.actions().dragAndDrop(slider, {x: 0, y: 30}).perform();
-   await browser.sleep(2000);
-   //assertion
-   expect('Loan Amount').to.exist;
-     
-   return console.log("@Then -- I select min and max amounts of loan slider");
-});
+        When("I click on get a quote", async function () {
+         await browser.manage().timeouts().implicitlyWait(50 * 8000);
+         element(by.css('[placeholder = "Enter your reg"]')).sendKeys('FV56WGD');
+         element(by.css('span.chevron')).click();
+         await browser.driver.sleep(2000);
+         element(by.css("div.formbox__estimated-mileage-cta-continue")).click();
+         await browser.driver.sleep(2000);
+         return console.log("@When -- I click on get a quote button");
+  
+        });
 
 
-// This chai Assertion check loan amount exist
-Then('I should see slider amount is loan', async function () {
-  await browser.manage().timeouts().implicitlyWait(5000);
-  //Assertion
-  expect('Loan').to.exist;
-  await browser.manage().timeouts().implicitlyWait(5000);
-  return console.log("@Then -- I should see slider amount is loan");
-});
+         Then("I fill the claims form", async function () {
+           await browser
+             .manage()
+             .timeouts()
+             .implicitlyWait(50 * 8000);
+            element(by.css('select[name="ncd"]'))
+              .element(by.cssContainingText("option", "1"));
+           await browser.driver.sleep(2000);
+             element(by.css('input[name="age"]')).sendKeys('40')
+             element(by.css('input[name="postcode"]')).sendKeys("E33LP");
+            element(by.css('select[name="renewal_month"]'))
+            .element(by.cssContainingText("option", "January"));
+          await browser.driver.sleep(2000);
+              element(by.css("div:nth-of-type(9)")).click();
+            await browser.driver.sleep(2000);
+              element.all(
+                by.css(
+                  "section:nth-of-type(5)>div:nth-of-type(1)>div:nth-of-type(1)>form>button>span"
+                )
+              ).click();
+               return console.log("@Then -- I fill the claims form ");
+             });
+        
 
-
-
-
+        

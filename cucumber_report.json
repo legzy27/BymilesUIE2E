@@ -1,21 +1,22 @@
 [
   {
+    "description": "As a new cusomter I want to get a quote",
     "keyword": "Feature",
-    "name": "Navigate Auden Credit/ShortTermLoan",
+    "name": "Get a quote on the homepage",
     "line": 1,
-    "id": "navigate-auden-credit/shorttermloan",
+    "id": "get-a-quote-on-the-homepage",
     "tags": [],
-    "uri": "features/login.feature",
+    "uri": "features/LandingPage.feature",
     "elements": [
       {
-        "id": "navigate-auden-credit/shorttermloan;monthly-loan-repayment-option",
+        "id": "get-a-quote-on-the-homepage;get-a-quick-quote-on-the-homepage",
         "keyword": "Scenario",
-        "line": 4,
-        "name": "Monthly Loan Repayment Option",
+        "line": 5,
+        "name": "Get a quick quote on the homepage",
         "tags": [
           {
-            "name": "@prod",
-            "line": 3
+            "name": "@test",
+            "line": 4
           }
         ],
         "type": "scenario",
@@ -34,48 +35,24 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 5,
-            "name": "I am on the auden short loan page",
+            "line": 6,
+            "name": "I am on the landing page",
             "match": {
-              "location": "features/stepDefinitions/stepDefinition.js:5"
+              "location": "features/stepDefinitions/stepDefinition.js:8"
             },
             "result": {
               "status": "failed",
-              "duration": 2000000,
-              "error_message": "ReferenceError: browser is not defined\n    at World.<anonymous> (/Users/legzy27/AudenBDDFramework/features/stepDefinitions/stepDefinition.js:6:3)"
+              "duration": 4000000,
+              "error_message": "ReferenceError: browser is not defined\n    at World.<anonymous> (/Users/legzy27/Desktop/ByMilesUIFramework/features/stepDefinitions/stepDefinition.js:9:7)"
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 6,
-            "name": "I select monthly loan instalment",
-            "match": {
-              "location": "features/stepDefinitions/stepDefinition.js:15"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
             "line": 7,
-            "name": "I set first repayment day to weekend option will change to friday",
+            "name": "I click on get a quote",
             "match": {
-              "location": "features/stepDefinitions/stepDefinition.js:26"
-            },
-            "result": {
-              "status": "skipped"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "I select min and max amounts of loan slider.",
-            "match": {
-              "location": "features/stepDefinitions/stepDefinition.js:35"
+              "location": "features/stepDefinitions/stepDefinition.js:22"
             },
             "result": {
               "status": "skipped"
@@ -84,10 +61,10 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 9,
-            "name": "I should see slider amount is loan",
+            "line": 8,
+            "name": "I fill the claims form",
             "match": {
-              "location": "features/stepDefinitions/stepDefinition.js:46"
+              "location": "features/stepDefinitions/stepDefinition.js:34"
             },
             "result": {
               "status": "skipped"

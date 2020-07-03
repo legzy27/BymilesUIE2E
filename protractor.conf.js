@@ -27,7 +27,7 @@ exports.config = {
 
     cucumberOpts: {
         // require step definitions
-        tags: '@prod' ,
+        tags: '@test' ,
         format: 'json:.tmp/results.json',
         require: [
           'features/stepDefinitions/stepDefinition.js' // accepts a glob
