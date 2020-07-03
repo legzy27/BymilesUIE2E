@@ -51,7 +51,7 @@ chai.use(chaiAsPromised);
                   "section:nth-of-type(5)>div:nth-of-type(1)>div:nth-of-type(1)>form>button>span"
                 )
               ).click();
-               return console.log("@Then -- I fill the claims form ");
+               return console.log("@Then -- I fill the claims form and get a the quote");
              });
         
 

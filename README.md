@@ -27,8 +27,6 @@ Protractor is an open source end to end testing testing framework.It allows you 
 - npm install mocha
 
 
-
-
 ## Automated tests Improvement
 -  Use more await command than sleep command
 -  click get quote button is been intercepted need to use unique element
