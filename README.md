@@ -30,7 +30,7 @@ Protractor is an open source end to end testing testing framework.It allows you 
 ## Automated tests Improvement
 -  Use more await command than sleep command
 -  click get quote button is been intercepted need to use unique element
-     - expand the page to a certain szie
+     - expand the page to a certain size
 -  Write clean code less duplications
 -  Create Page Object Model
 
